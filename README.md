@@ -46,7 +46,8 @@
 
 ## CloudFlare
 - use community script
-- be patient, it takes time to start
+  - [Proxmox VE Cloudflared LXC](https://community-scripts.github.io/ProxmoxVE/scripts?id=cloudflared)
+- be patient, it takes time to start on the 2nd step when you add in your key
 - in CloudFlare Dashboard change the following:
   - noTLSVerify: true
   - disableChunkedEncoding: true
