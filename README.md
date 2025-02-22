@@ -13,6 +13,10 @@
 - load it, setting your static IPs
 - come up with naming convention for each server (VPS-00), starting at zero (since ceph storage starts at 0)
 - confirm you can login to web interface (xxx.xxx.xxx.xxx:8006)
+
+## Initial Fixes on each Machine
+- run the [Proxmox Community: Post Install script](https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install) in the shell
+  - DO NOT disable HA!
  
 ## Create the Cluster
   - on the master node (not with the common IP, but its IP), select:
@@ -33,12 +37,16 @@
   - change the "repository" to "No-Subscription"
   - ensure this one finishs completely before doing any others, this master node needs to be done first
  
-## Initial Fixes on each Machine
-- run the [Proxmox Community: Post Install script](https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install) in the shell
-  - DO NOT disable HA!
-- install KEEPALIVED
-  - [YouTube Video](https://www.youtube.com/watch?v=82Q4SZMW-zg&list=PLwcxrRo-VwS2gNgY-GlPGDYZ6KCwSu3tD&index=3)
-  - [GitHub Repo](https://github.com/mrp-yt/Galaxy-Home-Lab/blob/main/Services/keepalived/keepalived-setup.md)
-  - REMEMBER: each machine gets a different priority (lower) and the "Master" node gets a special file, when setting up the config file
-  - also, ensure you set the IP to the one you are using as the single IP for cluster
-  - you can turn off the master and see if the others will pick up from the common IP address
+## Install KeepAlived
+- [YouTube Video](https://www.youtube.com/watch?v=82Q4SZMW-zg&list=PLwcxrRo-VwS2gNgY-GlPGDYZ6KCwSu3tD&index=3)
+- [GitHub Repo](https://github.com/mrp-yt/Galaxy-Home-Lab/blob/main/Services/keepalived/keepalived-setup.md)
+- REMEMBER: each machine gets a different priority (lower) and the "Master" node gets a special file, when setting up the config file
+- also, ensure you set the IP to the one you are using as the single IP for cluster
+- you can turn off the master and see if the others will pick up from the common IP address
+
+## CloudFlare
+- use community script
+- be patient, it takes time to start
+- in CloudFlare Dashboard change the following:
+  - noTLSVerify: true
+  - disableChunkedEncoding: true
