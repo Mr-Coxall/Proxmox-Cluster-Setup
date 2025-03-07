@@ -36,6 +36,12 @@
   - Ceph
   - change the "repository" to "No-Subscription"
   - ensure this one finishs completely before doing any others, this master node needs to be done first
+- next setup storage:
+  - add monitors
+  - add managers
+  - whip each drive
+  - create OSD on each drive
+  - create common pool
  
 ## Install KeepAlived
 - [YouTube Video](https://www.youtube.com/watch?v=82Q4SZMW-zg&list=PLwcxrRo-VwS2gNgY-GlPGDYZ6KCwSu3tD&index=3)
