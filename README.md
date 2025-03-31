@@ -31,11 +31,11 @@
 
 ## Install Ceph
 - ensure you are NOT using the shared IP address
-- start on the master node (wit its IP address)
+- start on the master node (with its IP address)
 - select:
   - Ceph
   - change the "repository" to "No-Subscription"
-  - ensure this one finishs completely before doing any others, this master node needs to be done first
+  - ensure this one finishes completely before doing any others, this master node needs to be done first
 - next setup storage:
   - add monitors
   - add managers
