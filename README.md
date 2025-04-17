@@ -57,3 +57,16 @@
 - in CloudFlare Dashboard change the following:
   - noTLSVerify: true
   - disableChunkedEncoding: true
+ 
+## Tailscale
+- use community script
+  - [Proxmox VE Tailscale LXC](https://community-scripts.github.io/ProxmoxVE/scripts?id=add-tailscale-lxc)
+- create a new Debian 12 (must be) LXC
+- then in the node run the install command
+- once installed, reboot the LXC
+- then run this command:
+  -  tailscale up --advertise-exit-node --advertise-routes=10.100.0.0/24 --accept-routes
+  -  replace the "10.100.0.0/24" with your VLAN that your proxmox cluster is on
+- then goto Tailscale, find the new node and turn on "Exit Node" & "Subnets"
+  - "Exit Node" will let you exit traffic out this node (you now have a VPN!)
+  - "Subnet", will let you connect to other VMs in the VLAN 
