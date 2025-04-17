@@ -69,4 +69,5 @@
   -  replace the "10.100.0.0/24" with your VLAN that your proxmox cluster is on
 - then goto Tailscale, find the new node and turn on "Exit Node" & "Subnets"
   - "Exit Node" will let you exit traffic out this node (you now have a VPN!)
-  - "Subnet", will let you connect to other VMs in the VLAN 
+  - "Subnet", will let you connect to other VMs in the VLAN
+  - REMEMBER: all VMs will most like still not let anyone ssh into them using "root", so you wil need to create another user on any VM that you want to SSH into!
