@@ -19,10 +19,15 @@
   - DO NOT disable HA!
  
 ## Create the Cluster
-  - on the master node (not with the common IP, but its IP), select:
-    - DataCenter
-    - Cluster
-    - Create Cluster
+- if you nned to remove "old" CEPH storage on a drive:
+  - goto "shell" for the node
+  - lsblk -> to get the name of each disk
+  - dmsetup remove <name_of_the_ceph_holder>
+  - then "wipe" the disk
+- on the master node (not with the common IP, but its IP), select:
+  - DataCenter
+  - Cluster
+  - Create Cluster
 - give it a Cluster Name (School-VPS)
 - copy the "Join Information"
 - goto the next node (with their IP address, not common) and join the cluster
